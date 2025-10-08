@@ -1,4 +1,4 @@
-import delay from '../../utils/delay';
+// import delay from '../../utils/delay';
 import APIError from '../../errors/APIError';
 
 class HttpClient {
@@ -37,7 +37,7 @@ class HttpClient {
   }
 
   async makeRequest(path, options) {
-    await delay(500); // Tempo do Loader (teste)
+    // await delay(500); // Tempo do Loader (teste)
 
     const headers = new Headers();
     if (options.body) {
