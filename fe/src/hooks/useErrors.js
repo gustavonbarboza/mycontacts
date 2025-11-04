@@ -24,7 +24,7 @@ export default function useErrors() {
 
   const getErrorMessageByFieldName = useCallback((fieldName) => (
     errors.find((error) => error.field === fieldName)?.message
-  ), []);
+  ), [errors]);
 
   return {
     setError, removeError, getErrorMessageByFieldName, errors,
