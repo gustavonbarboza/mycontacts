@@ -17,11 +17,17 @@ export default function useAnimatedList(inicialValue = []) {
     );
   }, []);
 
+  const renderList = useCallback((renderItem) => (
+    items.map((item) => renderItem(item, {
+      isLeaving: pedingRemovalItemsIds.includes(item.id),
+    }))
+  ), [items, pedingRemovalItemsIds]);
+
   return {
     items,
     setItems,
-    pedingRemovalItemsIds,
     handleRemoveItem,
     handleAnimationEnd,
+    renderList,
   };
 }
